@@ -104,6 +104,7 @@ public class MapChest : MonoBehaviour
     //获得宝箱状态
     int GetState()
     {
+        Debug.Log("kaikaikai");
         string pk = GetRuntimeKey();
         if (!runtime.KeyExist(pk)) return 0;
         return int.Parse(runtime.GetKeyValues(pk));

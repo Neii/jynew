@@ -22,6 +22,9 @@ public class GameEvent : MonoBehaviour
     /// </summary>
     public GameObject[] m_EventTargets;
 
+    // 是否阻止事件进行 -1阻止 -2正常
+    public int m_CanPass = -2;
+
     /// <summary>
     /// 交互事件
     /// </summary>
@@ -70,7 +73,7 @@ public class GameEvent : MonoBehaviour
     public void Init()
     {
         //如果有可交互事件，并且有绑定可交互物体。把这些物体设置为交互对象
-        if(m_UseItemEventId != NO_EVENT || m_InteractiveEventId != NO_EVENT)
+        if(m_UseItemEventId != NO_EVENT || m_InteractiveEventId != NO_EVENT || m_CanPass != -1)
         {
             if(m_EventTargets != null && m_EventTargets.Length > 0)
             {
@@ -86,7 +89,7 @@ public class GameEvent : MonoBehaviour
         }
 
         //否则清空该物体的可交互属性
-        if(m_UseItemEventId == NO_EVENT && m_InteractiveEventId == NO_EVENT)
+        if(m_UseItemEventId == NO_EVENT && m_InteractiveEventId == NO_EVENT || m_CanPass == -2)
         {
             foreach (var obj in m_EventTargets)
             {

@@ -213,7 +213,7 @@ public class GameEventManager : MonoBehaviour
 
     void OnFinishEvent()
     {
-        if (curEvent != null)
+        if (curEvent != null && curEvent.m_CanPass != -1)
         {
             curEvent.MarkChest();
         }

@@ -474,6 +474,12 @@ namespace Jyx2
             }
         }
 
+        public void ModifyEvent(int scene, int eventId, int interactiveEventId, int useItemEventId, int enterEventId, int canPass)
+        {
+            string key = "evt_" + scene + "_" + eventId;
+            KeyValues[key] = string.Format("{0}_{1}_{2}_{3}", interactiveEventId, useItemEventId, enterEventId, canPass);
+        }
+
         public void ModifyEvent(int scene, int eventId, int interactiveEventId, int useItemEventId, int enterEventId)
         {
             string key = "evt_" + scene + "_" + eventId;

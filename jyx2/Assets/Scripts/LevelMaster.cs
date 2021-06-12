@@ -883,8 +883,8 @@ public class LevelMaster : MonoBehaviour
                     evt.m_InteractiveEventId = int.Parse(tmp[0]);
                     evt.m_UseItemEventId = int.Parse(tmp[1]);
                     evt.m_EnterEventId = int.Parse(tmp[2]);
+                    evt.m_CanPass = int.Parse(tmp[3]);
                 }
-
                 evt.Init();
             }catch(Exception e)
             {
